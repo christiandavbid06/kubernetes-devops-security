@@ -29,6 +29,11 @@ pipeline {
               }
             }
       }
+      stage('SonarQube - SAST') {
+            steps {
+              sh "mvn sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.host.url=http://devsecops.brazilsouth.cloudapp.azure.com:9000 -Dsonar.login=680bb9b6f43b1caa2242c407f917774ac66c5c3d"
+            }
+        }
       stage('Docker Build and Push') {
             steps {
               withDockerRegistry([credentialsId: "docker-hub", url: ""]) {
