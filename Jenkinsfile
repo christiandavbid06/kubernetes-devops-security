@@ -41,11 +41,11 @@ pipeline {
               //}
             }
       }
-      stage("Quality gate") {
-            steps {
-                waitForQualityGate abortPipeline: true
-            }
-      }
+      //stage("Quality gate") {
+      //      steps {
+      //          waitForQualityGate abortPipeline: true
+      //      }
+      //}
       stage('Vulnerability Scan - Docker ') {
             steps {
               sh "mvn dependency-check:check"
