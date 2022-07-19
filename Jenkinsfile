@@ -23,11 +23,11 @@ pipeline {
               withSonarQubeEnv('SonarQube') {
                 sh "mvn sonar:sonar -Dsonar.projectKey=numeric-app -Dsonar.host.url=http://devsecops.brazilsouth.cloudapp.azure.com:9000 -Dsonar.login=711013ecae48001d4680e834bd1af8b593eacd15"
               }
-              timeout(time: 1, unit: 'MINUTES') {
-                script {
-                  waitForQualityGate abortPipeline: true
-                }
-              }
+              //timeout(time: 2, unit: 'MINUTES') {
+              //  script {
+              //    waitForQualityGate abortPipeline: true
+              //  }
+              //}
             }
       }
       //stage("Quality gate") {
