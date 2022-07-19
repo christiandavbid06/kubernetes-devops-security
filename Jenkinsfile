@@ -67,12 +67,12 @@ pipeline {
                 pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
                 dependencyCheckPublisher pattern: 'target/dependency-check-report.xml'
               }
-              success {
+              //success {
 
-              }
+              //}
 
-              failure{
-                
-              }
+              //failure{
+
+              //}
       }
 }
